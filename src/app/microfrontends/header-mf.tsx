@@ -40,6 +40,8 @@ const HeaderMicroFrontend = () => {
 }
 
 // Single-SPA lifecycle functions
+export const bootstrap = () => Promise.resolve()
+
 export const mount = (props: any) => {
   const container = document.getElementById('header-mf-container')
   if (container) {

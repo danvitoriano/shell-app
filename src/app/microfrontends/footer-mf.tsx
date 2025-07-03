@@ -108,6 +108,8 @@ const FooterMicroFrontend = () => {
 }
 
 // Single-SPA lifecycle functions
+export const bootstrap = () => Promise.resolve()
+
 export const mount = (props: any) => {
   const container = document.getElementById('footer-mf-container')
   if (container) {

@@ -123,6 +123,8 @@ const MainContentMicroFrontend = () => {
 }
 
 // Single-SPA lifecycle functions
+export const bootstrap = () => Promise.resolve()
+
 export const mount = (props: any) => {
   const container = document.getElementById('main-content-mf-container')
   if (container) {
