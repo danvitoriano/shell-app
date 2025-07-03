@@ -11,6 +11,37 @@ A aplicação é composta por micro-frontends independentes:
 - **Main Content MF**: Conteúdo principal da aplicação
 - **Footer MF**: Rodapé com informações e links
 
+## 🔗 Micro-Frontend Repositories
+
+Cada micro-frontend possui seu próprio repositório para desenvolvimento e deploy independente:
+
+### 📱 Header Micro-Frontend
+- **Repositório**: [header-mf](https://github.com/danvitoriano/header-mf)
+- **Porta**: 3001
+- **Deploy**: [header-mf-danvitoriano.vercel.app](https://header-mf-danvitoriano.vercel.app)
+
+### 📋 Sidebar Micro-Frontend  
+- **Repositório**: [sidebar-mf](https://github.com/danvitoriano/sidebar-mf)
+- **Porta**: 3002
+- **Deploy**: [sidebar-mf-danvitoriano.vercel.app](https://sidebar-mf-danvitoriano.vercel.app)
+
+### 📄 Main Content Micro-Frontend
+- **Repositório**: [main-content-mf](https://github.com/danvitoriano/main-content-mf)
+- **Porta**: 3003
+- **Deploy**: [main-content-mf-danvitoriano.vercel.app](https://main-content-mf-danvitoriano.vercel.app)
+
+### 🦶 Footer Micro-Frontend
+- **Repositório**: [footer-mf](https://github.com/danvitoriano/footer-mf)
+- **Porta**: 3004
+- **Deploy**: [footer-mf-danvitoriano.vercel.app](https://footer-mf-danvitoriano.vercel.app)
+
+### 🏠 Shell App (Este Repositório)
+- **Repositório**: [shell-app](https://github.com/danvitoriano/shell-app)
+- **Porta**: 3000
+- **Deploy**: [shell-app-danvitoriano.vercel.app](https://shell-app-danvitoriano.vercel.app)
+
+> **Nota**: Atualize as URLs de deploy conforme seus deployments reais no Vercel.
+
 ## 🚀 Tecnologias Utilizadas
 
 - **Next.js 14** - Framework React com App Router
