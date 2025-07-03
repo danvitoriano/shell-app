@@ -1,36 +1,150 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Micro-Frontend Shell App
 
-## Getting Started
+Esta é a aplicação shell (orquestradora) do projeto de micro-frontends usando **Next.js**, **Single-SPA** e **Material UI**.
 
-First, run the development server:
+## 🏗️ Arquitetura
+
+A aplicação é composta por micro-frontends independentes:
+
+- **Header MF**: Barra de navegação superior
+- **Sidebar MF**: Menu lateral de navegação
+- **Main Content MF**: Conteúdo principal da aplicação
+- **Footer MF**: Rodapé com informações e links
+
+## 🚀 Tecnologias Utilizadas
+
+- **Next.js 14** - Framework React com App Router
+- **TypeScript** - Tipagem estática
+- **Single-SPA** - Orquestração de micro-frontends
+- **Material UI** - Biblioteca de componentes
+- **Emotion** - CSS-in-JS (usado pelo Material UI)
+
+## 📦 Instalação e Execução
+
+### Pré-requisitos
+
+- Node.js 18+ 
+- npm ou yarn
+
+### Instalação
+
+```bash
+npm install
+```
+
+### Execução em Desenvolvimento
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A aplicação estará disponível em `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build para Produção
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## 🌐 Deploy na Vercel
 
-To learn more about Next.js, take a look at the following resources:
+### Deploy Automático via GitHub
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Faça push do código para um repositório GitHub
+2. Conecte o repositório na Vercel
+3. A Vercel detectará automaticamente como um projeto Next.js
+4. Configure as variáveis de ambiente se necessário
+5. Deploy será feito automaticamente
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Deploy Manual
 
-## Deploy on Vercel
+```bash
+# Instalar Vercel CLI
+npm i -g vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Deploy
+vercel
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📁 Estrutura do Projeto
+
+```
+shell-app/
+├── src/
+│   └── app/
+│       ├── microfrontends/        # Micro-frontends
+│       │   ├── header-mf.tsx      # Header
+│       │   ├── sidebar-mf.tsx     # Sidebar
+│       │   ├── main-content-mf.tsx # Conteúdo principal
+│       │   └── footer-mf.tsx      # Footer
+│       ├── globals.css            # Estilos globais
+│       ├── layout.tsx             # Layout principal
+│       ├── page.tsx               # Página inicial
+│       └── theme.ts               # Tema Material UI
+├── package.json
+└── README.md
+```
+
+## 🎨 Personalização
+
+### Tema
+
+O tema do Material UI pode ser personalizado no arquivo `src/app/theme.ts`:
+
+```typescript
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#1976d2', // Azul
+    },
+    secondary: {
+      main: '#dc004e', // Rosa
+    },
+  },
+})
+```
+
+### Micro-frontends
+
+Cada micro-frontend está localizado em `src/app/microfrontends/` e implementa:
+
+- **mount()**: Função para montar o componente
+- **unmount()**: Função para desmontar o componente
+- Componente React com Material UI
+
+## 🔧 Configuração do Single-SPA
+
+Os micro-frontends são registrados no arquivo `page.tsx`:
+
+```typescript
+registerApplication({
+  name: 'header-mf',
+  app: () => import('./microfrontends/header-mf'),
+  activeWhen: () => true,
+})
+```
+
+## 📝 Scripts Disponíveis
+
+- `npm run dev` - Execução em desenvolvimento
+- `npm run build` - Build para produção
+- `npm start` - Execução em produção
+- `npm run lint` - Verificação de linting
+
+## 🌟 Funcionalidades
+
+- ✅ Layout responsivo
+- ✅ Tema personalizado Material UI
+- ✅ Arquitetura micro-frontend
+- ✅ TypeScript
+- ✅ Otimizado para Vercel
+- ✅ Single-SPA para orquestração
+
+## 📄 Licença
+
+MIT License
+
+## 🤝 Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests.
