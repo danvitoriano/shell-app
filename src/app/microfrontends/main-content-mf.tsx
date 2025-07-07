@@ -17,7 +17,7 @@ const MainContentMicroFrontend = () => {
   return (
     <Box sx={{ padding: 3 }}>
       <Typography variant="h3" component="h1" gutterBottom sx={{ color: '#1976d2', fontWeight: 'bold' }}>
-        Bem-vindo ao Micro-Frontend
+        🎉 Bem-vindo ao Micro-Frontend - AGORA COM HOT RELOAD!
       </Typography>
       
       <Typography variant="h6" paragraph sx={{ color: '#666', mb: 4 }}>

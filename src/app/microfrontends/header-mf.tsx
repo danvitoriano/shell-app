@@ -24,7 +24,7 @@ const HeaderMicroFrontend = () => {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Micro-Frontend App
+          🚀 Micro-Frontend App - HOT RELOAD FUNCIONANDO!
         </Typography>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
           <Button color="inherit">Home</Button>
